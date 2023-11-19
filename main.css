@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    background-color: #eeeeee;
+
+}
+/*↓↓ light mode ↓↓*/
+
+.switcher{
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: #262626;
+    top: 80px;
+    left: 5px;
+    opacity: 100%;
+    border: 2px solid white;
+    transition: 2s;
+}
+
+.switcher .moon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: 8px 3px 0 0 #eadf51;
+    position: absolute;
+    top: 4px;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.sun{
+    border-radius: 100%!important;
+    background-color: #eadf51!important;
+    top: 7px!important;
+    right: 7px!important;
+    box-shadow: none!important;
+    transition: 2ms;
+}
+
+.nightMode{
+    background-color: #232323;
+    transition: 2s;
+}
+
+.switcher_light{
+    background-color: #1f7cff;
+}
+
+/* ↑↑ light mode ↑↑*/
+
+aside {
+    border: 2px red solid;
+    width: 55px;
+    height: 1000px;
+    position: fixed;
+}
+
+/* ↑↑ aside ↑↑*/
+
+header{
+    display: flex;
+}
+
+header .addNew{
+    position: relative;
+    top: 80px;
+    left: 100px;
+    height: 30px;
+}
+
+header .addNew form #newTask{
+    box-sizing: border-box;
+    width: 350px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 5px 5px 5px 10px;
+}
+
+header .addNew form #submitNewTask {
+    width: 95px;
+    height: 30px;
+    border: none;
+    background: linear-gradient(#e66465, #9198e5);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+main{
+    position: relative;
+    top: 110px;
+    left: 100px;
+    max-width: 1200px;
+}
+
+.task{
+    display: flex;
+    background-color: white;
+    border: 1px #cbcbcb solid;
+}

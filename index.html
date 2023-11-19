@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <aside>
+                <div class="switcher">
+                    <div class="moon"></div>
+                </div>
+            </aside>
+            <div class="addNew">
+                <form>
+                    <input name="task" id="newTask" type="text" required placeholder="Enter your task">
+                    <button type="submit" id="submitNewTask">Add</button>
+                </form>
+            </div>
+        </header>
+        <main>
+            <section id="taskList">
+                <div class="taskList"></div>
+            </section>
+
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
