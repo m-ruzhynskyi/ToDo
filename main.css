@@ -48,6 +48,7 @@ body{
 }
 
 /* ↑↑ light mode ↑↑*/
+/* ↓↓  aside ↓↓*/
 
 aside {
     border: 2px red solid;
@@ -63,9 +64,7 @@ header{
 }
 
 header .addNew{
-    position: relative;
-    top: 80px;
-    left: 100px;
+    margin: 80px 0 0 100px;
     height: 30px;
 }
 
@@ -89,15 +88,54 @@ header .addNew form #submitNewTask {
     cursor: pointer;
 }
 
+/* ↑↑ header ↑↑*/
+/* ↓↓ main ↓↓*/
+
 main{
-    position: relative;
-    top: 110px;
-    left: 100px;
+    margin: 30px 0 0 100px;
     max-width: 1200px;
 }
 
 .task{
     display: flex;
+    justify-content: space-between;
     background-color: white;
     border: 1px #cbcbcb solid;
+}
+
+/* ↓↓ buttons ↓↓*/
+.buttonsEditMain{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.mainImgs{
+    width: 45px;
+}
+
+.addSett{
+    display: none;
+    position: absolute;
+    left: 1225px;
+    background: white;
+    border: 1px solid red;
+    width: 150px;
+    height: 110px;
+    border-radius: 20px;
+}
+
+.addition{
+    background: white;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+}
+.addition:hover{
+    background: #62c0e3;
 }
