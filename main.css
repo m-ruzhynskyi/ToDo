@@ -37,9 +37,12 @@ body{
     box-shadow: none!important;
     transition: 2ms;
 }
+.sunSwitcher{
+    background-color: #1f7cff;
+}
 
 .nightMode{
-    background-color: #232323;
+    background-color: #1e232b;
     transition: 2s;
 }
 
@@ -51,16 +54,19 @@ body{
 /* ↓↓  aside ↓↓*/
 
 aside {
-    border: 2px red solid;
     width: 55px;
     height: 1000px;
     position: fixed;
     background-color: #eeeeee;
 }
-.compl > img{
-    width: 40px;
-    margin-top: 65px;
+header .switcher nav{
+    margin-top: 55px;
     cursor: pointer;
+}
+
+.compl > img, .uncompl > img, .binIcon > img{
+    width: 40px;
+    margin-top: 12px;
 }
 /* ↑↑ aside ↑↑*/
 
@@ -111,6 +117,10 @@ main{
     display: none;
 }
 
+.bin{
+    display: none;
+}
+
 /* ↑↑ main ↑↑*/
 /* ↓↓ buttons ↓↓*/
 
@@ -157,5 +167,8 @@ main{
     background-color: #70bf70;
     text-decoration: line-through;
 }
-
+.delete{
+    background-color: #b23434;
+    text-decoration: line-through;
+}
 /*  ↑↑ buttons ↑↑*/

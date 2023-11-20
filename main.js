@@ -38,6 +38,7 @@ class NewTask {
         this.#button2 = document.createElement('button');
         this.#button2.innerHTML = '<img src="./assets/img/bin.png" alt="bin" class="mainImgs" >';
         this.#button2.classList.add('buttonsEditMain');
+        this.#button2.addEventListener('click', (e) => {this.bin(e)})
 
         this.#div.append(this.#input);
         this.#div.append(this.#p);
@@ -78,14 +79,28 @@ class NewTask {
             document.querySelector('.taskList').append(this.#mainDiv)
         }
     }
-    
+
+    bin(e){
+        document.querySelector('.bin').append(this.#mainDiv)
+        this.#input.checked = true
+        if (this.#mainDiv.classList.contains('completed')) {
+            this.#button2.style.display = 'none';
+            this.#input.style.display = 'none'
+        } else{
+            this.#mainDiv.classList.add('delete');
+            this.#button1.classList.add('delete');
+            this.#button2.classList.add('delete');
+            this.#button2.style.display = 'none';
+            this.#input.style.display = 'none'
+        }
+    }
 }
 
 let night = document.querySelector('.moon');
 night.addEventListener('click', function (){
     document.querySelector('body').classList.toggle('nightMode');
     night.classList.toggle('sun')
-    night.parentElement.classList.toggle('switcher_light')
+    night.parentElement.parentElement.classList.toggle('sunSwitcher')
 });
 document.addEventListener("keypress", function (e) {
     if (e.code === 'Enter'){
@@ -110,9 +125,29 @@ readyTasks.addEventListener('click', function () {
     if (document.querySelector('.taskList').style.display !=='none') {
         document.querySelector('.taskList').style.display ='none'
         document.querySelector('.ready').style.display ='block'
+        document.querySelector('.bin').style.display ='none'
+
     }else{
         document.querySelector('.taskList').style.display ='block'
         document.querySelector('.ready').style.display ='none'
+        document.querySelector('.bin').style.display ='none'
     }
 
 })
+let unreadyTask = document.querySelector('.uncompl')
+unreadyTask.addEventListener('click', function () {
+    if (document.querySelector('.taskList').style.display ==='none') {
+        document.querySelector('.taskList').style.display ='block'
+        document.querySelector('.ready').style.display ='none'
+        document.querySelector('.bin').style.display ='none'
+    }
+})
+
+let bin = document.querySelector('.binIcon');
+bin.addEventListener('click', function () {
+    if (document.querySelector('.taskList').style.display === 'none') {
+        document.querySelector('.taskList').style.display = 'none';
+        document.querySelector('.ready').style.display = 'none';
+        document.querySelector('.bin').style.display = 'block';
+    }
+});
