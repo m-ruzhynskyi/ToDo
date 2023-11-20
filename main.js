@@ -7,10 +7,8 @@ class NewTask {
     #button2;
     #mainDiv;
     #buttonDiv;
-    #userX;
     #element;
     #userY;
-    #settBlock;
     constructor(task) {
         this.#task = task;
     }
@@ -27,6 +25,8 @@ class NewTask {
         this.#input = document.createElement('input');
         this.#input.type = 'checkbox';
         this.#input.id = 'check';
+        this.#input.style.cursor = 'pointer ';
+        this.#input.addEventListener('click', (e) => {this.taskCompleted(e)})
 
         this.#p = document.createElement('p');
         this.#p.textContent = this.#task;
@@ -56,10 +56,29 @@ class NewTask {
             this.#element.style.top = `${this.#userY}px`;
             this.#element.style.display = 'flex';
             this.#element.style.flexDirection = 'column';
+
+            document.querySelector('#complete').addEventListener('click',
+                (e) => {this.taskCompleted(e)})
         }else{
             this.#element.style.display = 'none';
         }
     }
+
+    taskCompleted(e){
+        if(this.#input.checked){
+            this.#mainDiv.classList.add('completed');
+            this.#button1.classList.add('completed');
+            this.#button2.classList.add('completed');
+            document.querySelector('.ready').append(this.#mainDiv)
+        }else {
+            this.#mainDiv.classList.remove('completed');
+            this.#button1.classList.remove('completed');
+            this.#button2.classList.remove('completed');
+            this.#input.checked = false;
+            document.querySelector('.taskList').append(this.#mainDiv)
+        }
+    }
+    
 }
 
 let night = document.querySelector('.moon');
@@ -84,4 +103,16 @@ form.addEventListener('submit', function (e){
     let taskAdd = new NewTask(task.value)
     document.querySelector('.taskList').append(taskAdd.add)
     task.value = '';
+})
+
+let readyTasks = document.querySelector('.compl')
+readyTasks.addEventListener('click', function () {
+    if (document.querySelector('.taskList').style.display !=='none') {
+        document.querySelector('.taskList').style.display ='none'
+        document.querySelector('.ready').style.display ='block'
+    }else{
+        document.querySelector('.taskList').style.display ='block'
+        document.querySelector('.ready').style.display ='none'
+    }
+
 })
