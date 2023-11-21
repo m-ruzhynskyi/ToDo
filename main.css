@@ -53,12 +53,22 @@ body{
 /* ↑↑ light mode ↑↑*/
 /* ↓↓  aside ↓↓*/
 
-aside {
-    width: 55px;
+aside:hover {
+    width: 95px;
     height: 1000px;
     position: fixed;
-    background-color: #eeeeee;
+    background-color: #ffffff;
 }
+
+.textAdd{
+    display: none;
+    margin: 0;
+}
+
+aside:hover .textAdd{
+    display: block;
+}
+
 header .switcher nav{
     margin-top: 55px;
     cursor: pointer;
@@ -89,6 +99,18 @@ header .addNew form #newTask{
 }
 
 header .addNew form #submitNewTask {
+    width: 95px;
+    height: 30px;
+    border: none;
+    background: linear-gradient(#e66465, #9198e5);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+header .addNew form #editButt {
+    display: none;
     width: 95px;
     height: 30px;
     border: none;
@@ -142,7 +164,7 @@ main{
     background: white;
     border: 1px solid red;
     width: 150px;
-    height: 97px;
+    height: 48px;
     border-radius: 20px;
 }
 

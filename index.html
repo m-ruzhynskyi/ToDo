@@ -17,12 +17,15 @@
                         <div class="moon"></div>
                         <div class="uncompl">
                             <img src="assets/img/uncomplete.png" alt="uncomplete icon">
+                            <p class="textAdd">Uncompleted</p>
                         </div>
                         <div class="compl">
                             <img src="assets/img/complet.png" alt="complete icon">
+                            <p class="textAdd">Complete</p>
                         </div>
                         <div class="binIcon">
                             <img src="assets/img/bin.png" alt="bin icon">
+                            <p class="textAdd">Bin</p>
                         </div>
                     </nav>
                 </div>
@@ -31,24 +34,13 @@
                 <form>
                     <input name="task" id="newTask" type="text" required placeholder="Enter your task">
                     <button type="submit" id="submitNewTask">Add</button>
+                    <button type="submit" id="editButt">Edit</button>
                 </form>
             </div>
         </header>
         <main>
             <section id="taskList">
-                <div class="taskList">
-                    <div
-                            style="position: absolute;
-                            background: red;
-                            width: 24px;
-                            height: 50px;
-                            right: 699px;"
-                    ></div>
-                </div>
-                <nav class="addSett">
-                    <button class="addition">Edit</button>
-                    <button class="addition">Prior</button>
-                </nav>
+                <div class="taskList"></div>
             </section>
             <section id="readyTasks">
                 <div class="ready"></div>
